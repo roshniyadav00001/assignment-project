@@ -1,0 +1,447 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Profile</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .card{
+    box-shadow: 5px 10px 15px  blue;
+  }
+
+  .card-deck {
+    margin-bottom: 20px;
+  }
+  
+    .profile-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .profile-info {
+      flex-grow: 1;
+    }
+
+    #repo-cards-container {
+      margin-bottom: 20px;
+    }
+
+    #pagination-container {
+      margin-top: 20px;
+    }
+
+    .loading-indicator {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+ 
+
+  <div class="profile-container">
+    <img src="" alt="Profile Image" class="profile-img" id="profile-img">
+    <div class="profile-info">
+      <h3 id="profile-name"></h3>
+      
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="reposPerPage">Repositories per page:</label>
+    <select class="form-control" id="reposPerPage" onchange="updatePage()">
+      <option value="10">10</option>
+      <option value="30">30</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select>
+  </div>
+
+
+
+  <div class="loading-indicator" id="loading-indicator" >
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div id="repo-cards-container" class="row">
+
+    <div class="container">
+      
+      <div class="card-deck"> 
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Heroes</h5>
+            <p class="card-text">Heroes description goes here</p>
+            <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+            <a href="#" class="btn btn-primary" target="_blank">angular</a>
+            <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+            <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+          </div>
+        </div>
+
+        <!-- Card 2-->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Heroes</h5>
+            <p class="card-text">Heroes description goes here</p>
+            <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+            <a href="#" class="btn btn-primary" target="_blank">angular</a>
+            <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+            <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+          </div>
+        </div>
+      </div>
+          
+          <div class="card-deck"> 
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Heroes</h5>
+              <p class="card-text">Heroes description goes here</p>
+              <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+              <a href="#" class="btn btn-primary" target="_blank">angular</a>
+              <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+              <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Heroes</h5>
+              <p class="card-text">Heroes description goes here</p>
+              <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+              <a href="#" class="btn btn-primary" target="_blank">angular</a>
+              <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+              <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-deck">
+          <!-- Card 5 -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Heroes</h5>
+              <p class="card-text">Heroes description goes here</p>
+              <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+              <a href="#" class="btn btn-primary" target="_blank">angular</a>
+              <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+              <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Heroes</h5>
+              <p class="card-text">Heroes description goes here</p>
+              <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+              <a href="#" class="btn btn-primary" target="_blank">angular</a>
+              <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+              <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+            </div>
+          </div>
+          
+      
+        </div>
+      
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Heroes</h5>
+                  <p class="card-text">Heroes description goes here</p>
+                  <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+                  <a href="#" class="btn btn-primary" target="_blank">angular</a>
+                  <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+                   <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Heroes</h5>
+                  <p class="card-text">Heroes description goes here</p>
+                  <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+                  <a href="#" class="btn btn-primary" target="_blank">angular</a>
+                  <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+                  <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+                </div>
+              </div>
+      
+        </div>
+      
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Heroes</h5>
+                  <p class="card-text">Heroes description goes here</p>
+                  <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+                  <a href="#" class="btn btn-primary" target="_blank">angular</a>
+                  <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+                  <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Heroes</h5>
+                  <p class="card-text">Heroes description goes here</p>
+                  <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+                  <a href="#" class="btn btn-primary" target="_blank">angular</a>
+                  <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+                  <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+                </div>
+              </div>
+      
+        </div>
+
+
+
+        <div class="card-deck">
+          <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Heroes</h5>
+                <p class="card-text">Heroes description goes here</p>
+                <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+                <a href="#" class="btn btn-primary" target="_blank">angular</a>
+                <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+                 <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Heroes</h5>
+                <p class="card-text">Heroes description goes here</p>
+                <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+                <a href="#" class="btn btn-primary" target="_blank">angular</a>
+                <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+                <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+              </div>
+            </div>
+    
+      </div>
+      <div class="card-deck">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Heroes</h5>
+              <p class="card-text">Heroes description goes here</p>
+              <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+              <a href="#" class="btn btn-primary" target="_blank">angular</a>
+              <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+               <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Heroes</h5>
+              <p class="card-text">Heroes description goes here</p>
+              <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+              <a href="#" class="btn btn-primary" target="_blank">angular</a>
+              <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+              <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+            </div>
+          </div>
+  
+    </div>
+    <div class="card-deck">
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Heroes</h5>
+            <p class="card-text">Heroes description goes here</p>
+            <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+            <a href="#" class="btn btn-primary" target="_blank">angular</a>
+            <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+             <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Heroes</h5>
+            <p class="card-text">Heroes description goes here</p>
+            <a href="#" class="btn btn-primary" target="_blank">Javascript</a>
+            <a href="#" class="btn btn-primary" target="_blank">angular</a>
+            <a href="#" class="btn btn-primary" target="_blank">angularjs</a>
+            <a href="#" class="btn btn-primary" target="_blank">Angular 2+</a>
+          </div>
+        </div>
+
+  </div>
+    
+      </div>
+  </div>
+  <div id="pagination-container" class="text-center">
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item active" aria-current="page">
+          <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item"><a class="page-link" href="#">6</a></li>
+        <li class="page-item"><a class="page-link" href="#">7</a></li>
+        <li class="page-item"><a class="page-link" href="#">8</a></li>
+        <li class="page-item"><a class="page-link" href="#">9</a></li>
+        <li class="page-item"><a class="page-link" href="#">10</a></li>
+        
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  const username = 'johnpapa'; // Replace with the GitHub username
+
+  const profileImg = $('#profile-img');
+  const profileName = $('#profile-name');
+  const repoCardsContainer = $('#repo-cards-container');
+  const paginationContainer = $('#pagination-container');
+  const loadingIndicator = $('#loading-indicator');
+  const reposPerPageSelect = $('#reposPerPage');
+
+
+  const apiUrl = `https://api.github.com/users/${'johnpapa'}/repos`;
+  let currentPage = 1;
+  let reposPerPage = 10;
+
+  function fetchProfile() {
+    return $.ajax({
+      url: `https://api.github.com/users/${'johnpapa'}`,
+      method: 'GET',
+      dataType: 'json'
+    });
+  }
+
+  function fetchData(page) {
+    const url = `${'https://docs.github.com/en/rest/reference'}?page=${100}&per_page=${10}`;
+
+    return $.ajax({
+      url: 'https://docs.github.com/en/rest/reference',
+      method: 'GET',
+      dataType: 'json',
+      beforeSend: function() {
+        loadingIndicator.show();
+      },
+      complete: function() {
+        loadingIndicator.hide();
+      }
+    });
+  }
+
+  function renderProfile(profile) {
+    profileImg.attr('src', profile.avatar_url);
+    profileName.text(profile.name || username);
+  }
+
+  function renderCards(repos) {
+    repoCardsContainer.empty();
+
+    repos.forEach(repo => {
+      const card = `
+        <div class="col-md-6 col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">${repo.name}</h5>
+              <p class="card-text">${repo.description || 'No description available.'}</p>
+              <a href="${repo.html_url}" class="btn btn-primary" target="_blank">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+      `;
+
+      repoCardsContainer.append(card);
+    });
+  }
+
+  function renderPagination(totalPages) {
+    paginationContainer.empty();
+
+    for (let i = 1; i <= totalPages; i++) {
+      const pageButton = $('<button>')
+        .addClass('btn btn-link')
+        .text(i)
+        .on('click', function() {
+          currentPage = i;
+          updatePage();
+        });
+
+      paginationContainer.append(pageButton);
+    }
+  }
+
+  function updatePage() {
+    const reposPerPage = reposPerPageSelect.val();
+    fetchData(100, 10)
+      .done(function(data) {
+        renderCards(data);
+        renderPagination(10); // Assuming 10 pages as a starting point
+      })
+      .fail(function(error) {
+        console.error('Error fetching data:', error);
+      });
+  }
+
+  function initialize() {
+    const profileData = fetchProfile();
+    profileData.done(function(data) {
+      renderProfile(data);
+
+      const reposPerPage = reposPerPageSelect.val();
+      fetchData(100, 10)
+        .done(function(data) {
+          renderCards(data);
+          renderPagination(10); // Assuming 10 pages as a starting point
+        })
+        .fail(function(error) {
+          console.error('Error fetching data:', error);
+        });
+    });
+  }
+
+  initialize();
+</script>
+
+</body>
+</html>
